@@ -10,18 +10,11 @@ export function ColorPicker({ currentColor, onColorChange }: ColorPickerProps) {
     "#000000",
     "#FFFFFF",
     "#FF0000",
-    "#6AA84F",
+    "#3F9E15",
     "#0000FF",
     "#FFFF00",
     "#FF00FF",
     "#00FFFF",
-    "#FFA500",
-    "#800080",
-    "#FFC0CB",
-    "#A52A2A",
-    "#808080",
-    "#000080",
-    "#008000",
   ]
 
   return (

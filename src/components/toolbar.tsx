@@ -2,15 +2,16 @@
 
 import type { Tool } from "@/app/page"
 import { Button } from "@/components/ui/button"
-import { Pencil, PaintBucket, Minus, Square, Circle, Eraser, Trash2 } from "lucide-react"
+import { Pencil, PaintBucket, Minus, Square, Circle, Eraser, Trash2, Download } from "lucide-react"
 
 interface ToolbarProps {
   currentTool: Tool
   onToolChange: (tool: Tool) => void
   onClear: () => void
+  onExport: () => void
 }
 
-export function Toolbar({ currentTool, onToolChange, onClear }: ToolbarProps) {
+export function Toolbar({ currentTool, onToolChange, onClear, onExport }: ToolbarProps) {
   const tools = [
     { id: "pen" as Tool, icon: Pencil, label: "Pen" },
     { id: "bucket" as Tool, icon: PaintBucket, label: "Paint Bucket" },
@@ -38,7 +39,11 @@ export function Toolbar({ currentTool, onToolChange, onClear }: ToolbarProps) {
         )
       })}
 
-      <div className="ml-auto">
+      <div className="ml-auto flex gap-2">
+        <Button variant="secondary" size="sm" onClick={onExport} className="flex items-center gap-2">
+          <Download size={16} />
+          <span className="hidden sm:inline">Export</span>
+        </Button>
         <Button variant="destructive" size="sm" onClick={onClear} className="flex items-center gap-2">
           <Trash2 size={16} />
           <span className="hidden sm:inline">Clear</span>
